@@ -1,3 +1,4 @@
+import os
 import logging
 from telegram import Bot
 from telegram import ParseMode
@@ -12,6 +13,7 @@ from telegram.ext import MessageHandler
 from telegram.ext import Filters
 from telegram.ext import Updater
 from telegram.utils.request import Request
+from boto.s3.connection import S3Connection
 from config_teleg import TG_FB_USER_ID, TG_API_URL, reply_keyboard_start, reply_keyboard, reply_keyboard_goods, reply_keyboard_goods_1, reply_markup_start, reply_markup, reply_markup_goods, reply_markup_goods_1
 from src_goods import goods_preview, goods_name, goods_description, goods_price, goods_link
 
@@ -533,12 +535,14 @@ def goods_aksessuary(update, context):
 
 #основа основ. запуск бота
 def main():
+    token = S3Connection(os.environ['TG_TOKEN'])
+
     req = Request(
             connect_timeout=0.5,
             read_timeout=1.0,
             )
     bot = Bot(
-            token=TG_TOKEN,
+            token=token,
             request=req,
             base_url=TG_API_URL,
             )
