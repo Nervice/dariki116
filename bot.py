@@ -12,7 +12,7 @@ from telegram.ext import MessageHandler
 from telegram.ext import Filters
 from telegram.ext import Updater
 from telegram.utils.request import Request
-from config_teleg import TG_TOKEN, TG_FB_USER_ID, TG_API_URL, reply_keyboard_start, reply_keyboard, reply_keyboard_goods, reply_keyboard_goods_1, reply_markup_start, reply_markup, reply_markup_goods, reply_markup_goods_1
+from config_teleg import TG_FB_USER_ID, TG_API_URL, reply_keyboard_start, reply_keyboard, reply_keyboard_goods, reply_keyboard_goods_1, reply_markup_start, reply_markup, reply_markup_goods, reply_markup_goods_1
 from src_goods import goods_preview, goods_name, goods_description, goods_price, goods_link
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
