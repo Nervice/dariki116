@@ -1,7 +1,6 @@
 from telegram import ReplyKeyboardMarkup
 
 #токен
-TG_TOKEN = '1098855461:AAGByMnk_vhig8RweeE95G3OkqHtzph7Nyc'
 
 #юзер айди пользователя для обратной связи
 TG_FB_USER_ID = '881375721'
