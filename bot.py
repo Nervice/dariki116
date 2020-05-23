@@ -1,5 +1,6 @@
 import os
 import logging
+from datetime import datetime
 from telegram import Bot
 from telegram import ParseMode
 from telegram import Update
@@ -15,8 +16,12 @@ from telegram.ext import Updater
 from telegram.utils.request import Request
 from config_teleg import TG_FB_USER_ID, TG_API_URL, reply_keyboard_start, reply_keyboard, reply_keyboard_goods, reply_keyboard_goods_1, reply_markup_start, reply_markup, reply_markup_goods, reply_markup_goods_1
 from src_goods import goods_preview, goods_name, goods_description, goods_price, goods_link
-
 #logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+def info(update, context):
+    print("<!------!>")
+    print(datetime.now())
+    print("Присоединился(-ась): {0};\nid пользователя: {1}".format(update.effective_user.first_name, str(update.effective_user.id)))
 
 #команда выполняется при нажатии 'Старт'
 def do_start(update, context):
@@ -25,6 +30,7 @@ def do_start(update, context):
             reply_markup=reply_markup_start,
             parse_mode=ParseMode.HTML,
             )
+    info(update, context)
 
 #кнопка 'На главную'
 def btn_go_main(update, context):
