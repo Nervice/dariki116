@@ -19,9 +19,7 @@ from src_goods import goods_preview, goods_name, goods_description, goods_price,
 #logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 def info(update, context):
-    print("<!------!>")
-    print(datetime.now())
-    print("Присоединился(-ась): {0};\nid пользователя: {1}".format(update.effective_user.first_name, str(update.effective_user.id)))
+    print("<!----------!>\nПрисоединился(-ась): {0}\nid пользователя: {1}\n<!----------!>".format(update.effective_user.first_name, str(update.effective_user.id)))
 
 #команда выполняется при нажатии 'Старт'
 def do_start(update, context):
